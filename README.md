@@ -1,4 +1,4 @@
-Aqui está o código Markdown formatado para o seu README.md. Ele contém todas as seções, justificativas, diagramas e requisitos de teste, prontos para serem usados no seu repositório Git.Markdown# 🏛️ Projeto: Sistema de Inscrições em Eventos Acadêmicos (Design Patterns)
+🏛️ Projeto: Sistema de Inscrições em Eventos Acadêmicos (Design Patterns)
 
 ## 🎯 Problema e Objetivo
 
