@@ -30,7 +30,7 @@ O projeto segue a estrutura recomendada para Design Patterns:
 /EventoAcademico/├── /app/             (Scripts de execução e testes)├── /domain/          (Entidades e Interfaces Base: Inscricao, Desconto)├── /strategies/      (Lógica de Preço)├── /decorators/      (Lógica de Desconto)├── /observers/       (Mecanismos de Reação)├── /infra/           (Singleton)└── /tests/           (Testes Unitários)
 ## 📐 Diagrama Simples (Mermaid)
 
-
+```mermaid
 graph TD
     subgraph Padrão Strategy
         I[Inscricao (Context)] --> |injeta| S{PrecoStrategy};
