@@ -32,19 +32,19 @@ O projeto segue a estrutura recomendada para Design Patterns:
 
 ```mermaid
 graph TD
-    subgraph Padrão Strategy
+    subgraph Padrao Strategy
         I[Inscricao (Context)] --> |injeta| S{PrecoStrategy};
         S --> SA[AlunoStrategy];
         S --> SP[ProfissionalStrategy];
     end
 
-    subgraph Padrão Observer
+    subgraph Padrao Observer
         I --> |notifica| O[Observer];
         O --> OE[EmailObserver];
         O --> OL[LogObserver];
     end
     
-    subgraph Padrão Decorator
+    subgraph Padrao Decorator
         D[Desconto] --> |embrulha| CD[CupomDecorator];
         CD --> IM[IsencaoMonitor];
     end
