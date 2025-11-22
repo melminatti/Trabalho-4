@@ -30,7 +30,7 @@ O projeto segue a estrutura recomendada para Design Patterns:
 /EventoAcademico/├── /app/             (Scripts de execução e testes)├── /domain/          (Entidades e Interfaces Base: Inscricao, Desconto)├── /strategies/      (Lógica de Preço)├── /decorators/      (Lógica de Desconto)├── /observers/       (Mecanismos de Reação)├── /infra/           (Singleton)└── /tests/           (Testes Unitários)
 ## 📐 Diagrama Simples (Mermaid)
 
-```mermaid
+
 graph TD
     subgraph Padrao Strategy
         I[Inscricao (Context)] --> |injeta| S{PrecoStrategy};
@@ -49,6 +49,29 @@ graph TD
         CD --> IM[IsencaoMonitor];
     end
 
-    I -- implementa --> D
-🚀 Como Rodar e TestarO projeto utiliza um arquivo de teste via Command Line Interface (CLI) para provar o funcionamento dos padrões.1. ExecuçãoAbra o terminal na pasta raiz do projeto (/EventoAcademico/).Execute o script de teste:Bashphp app/cli_test.php
-2. Validação dos Testes ObrigatóriosRequisito de TesteProva na Saída CLIPadrão ValidadoTroca Dinâmica de StrategiesPreço Base muda de R$ 200,00 (Strategy Aluno) para R$ 225,00 (Strategy Profissional).StrategyComposição de DecoratorsO Preço Final (Cupom + Isenção) é R$ 0,00, provando a aplicação da cadeia de descontos em camadas.DecoratorUnicidade do SingletonA saída confirma SUCESSO! Ambas as instâncias são iguais (Unicidade)..SingletonObserver (Desacoplamento)O terminal imprime o Observer EMAIL e o Observer LOG logo após a notificação, provando que as ações secundárias foram disparadas.
+## 🚀 Como Rodar e Testar
+
+O projeto utiliza um arquivo de teste via Command Line Interface (CLI) para provar o funcionamento dos padrões.
+
+### 1. Pré-requisitos
+
+* PHP 7.4+ instalado e configurado.
+* Acesso ao terminal/CLI na pasta raiz do projeto (`/EventoAcademico/`).
+
+### 2. Execução e Validação dos Testes
+
+1.  Abra o terminal na pasta raiz do projeto.
+2.  Execute o script de teste:
+
+    ```bash
+    php app/cli_test.php
+    ```
+
+**Validação da Saída:**
+
+| Requisito de Teste | Prova na Saída CLI | Padrão Validado |
+| :--- | :--- | :--- |
+| **Strategy (Preço Base)** | Preço Base deve mudar de **R$ 250,00** para **R$ 200,00** (Strategy Aluno) ou **R$ 225,00** (Strategy Profissional). | Strategy |
+| **Composição de Decorators** | O Preço Final (Cupom + Isenção) deve ser **R$ 0,00**, provando a aplicação da cadeia de descontos em camadas. | Decorator |
+| **Unicidade do Singleton** | O terminal confirma **`SUCESSO! Ambas as instâncias são iguais (Unicidade).`**. | Singleton |
+| **Observer (Desacoplamento)** | O terminal imprime o `Observer EMAIL` e o `Observer LOG` logo após a notificação, provando que as ações secundárias foram disparadas. | Observer |
