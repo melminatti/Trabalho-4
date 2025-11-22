@@ -32,27 +32,30 @@ O projeto segue a estrutura recomendada para Design Patterns:
 
 
 graph TD
+    %% Define a Estrutura da Strategy
     subgraph Padrao Strategy
-        I[Inscricao (Context)];
+        I_S[Inscricao (Context)];
         S{PrecoStrategy};
         SA[AlunoStrategy];
         SP[ProfissionalStrategy];
 
-        I --> |injeta| S;
+        I_S --> |injeta| S;
         S --> SA;
         S --> SP;
     end
 
+    %% Define a Estrutura do Observer
     subgraph Padrao Observer
         O[Observer];
         OE[EmailObserver];
         OL[LogObserver];
         
-        I --> |notifica| O;
+        I_S --> |notifica| O;
         O --> OE;
         O --> OL;
     end
     
+    %% Define a Estrutura do Decorator
     subgraph Padrao Decorator
         D[Desconto];
         CD[CupomDecorator];
@@ -60,9 +63,10 @@ graph TD
 
         D --> |embrulha| CD;
         CD --> IM;
-        
-        I -- implementa --> D;
     end
+    
+    %% Conexão entre os Padrões
+    
 
 ## 🚀 Como Rodar e Testar
 
